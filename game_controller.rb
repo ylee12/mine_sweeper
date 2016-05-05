@@ -18,10 +18,10 @@ class Game_controller
      @number_of_mime = c
      @game_board = {}
      @time_to_try = 0
-     #@max_try = a * b
+     @max_try = @size_x * @size_y - @number_of_mime
 
      # allow to guess only X times for each game
-     @max_try = 20
+     #@max_try = 20
 
   end
 
