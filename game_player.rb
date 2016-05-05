@@ -29,7 +29,7 @@ begin
   x_coord = rand(0..9)
   y_coord = rand(0..9)
 
-  puts ("Attempt #{attempt}. Trying corrdinate #{x_coord}, #{y_coord}")
+  #puts ("Attempt #{attempt}. Trying corrdinate #{x_coord}, #{y_coord}")
  
   is_die, finish = game_controller.play_game(x_coord, y_coord)
  
@@ -38,6 +38,10 @@ begin
  
    # restart up the game for play again
    game_controller.set_up_game
+
+   puts "\n\nAnother new game:"
+   
+   game_controller.show_current_sate
  
   elsif (is_die)
     # restart up the game for play again
@@ -47,7 +51,7 @@ begin
   attempt += 1
  
 
-end while attempt < 100000 #is_die == false || !finish
+end while attempt <= 100000 #is_die == false || !finish
 
 end_time = Time.now
 
